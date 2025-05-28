@@ -1,0 +1,165 @@
+@extends('index')
+@section('content')
+    <div class="container-fluid sticky-top px-0">
+        <div class="position-absolute bg-dark" style="left: 0; top: 0; width: 100%; height: 100%;">
+        </div>
+        <div class="container px-0">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-white py-3 px-4">
+                <a class="navbar-brand d-flex align-items-center p-0">
+                    <img src="{{ asset('logo/artmixmaster_logo2.png') }}" alt="Logo" style="height: 60px;" class="me-2">
+                    <h3 class="avant-garde-text" style="margin-top: 10px">ARTMIX-MASTER</h3>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0">
+                        <a href="{{route('home')}}" class="nav-item nav-link ">Главная страница</a>
+                        <a href="{{route('about')}}" class="nav-item nav-link">О нас</a>
+                        <a href="{{route('service')}}" class="nav-item nav-link">Услуги</a>
+                        <a href="{{route('projects')}}" class="nav-item nav-link active">Проекты</a>
+                        <a href="{{route('blog')}}" class="nav-item nav-link">Наш блог</a>
+                        <a href="{{route('contact')}}" class="nav-item nav-link">Контакт</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="container-fluid bg-breadcrumb">
+        <div class="bg-breadcrumb-single"></div>
+        <div class="container text-center py-5" style="max-width: 900px;">
+            <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s"></h4>
+            <ol class="breadcrumb justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+                <li class="breadcrumb-item"><a href="{{route('home')}}">Главная страница</a></li>
+                <li class="breadcrumb-item active text-primary">Наш проекты</li>
+            </ol>
+        </div>
+    </div>
+{{--    <div class="container-fluid project pt-5">--}}
+{{--        <div class="container pt-5">--}}
+{{--            <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">--}}
+{{--                <h1 class="display-4">Explore Our Latest Projects</h1>--}}
+{{--            </div>--}}
+{{--            <div class="project-carousel owl-carousel wow fadeInUp" data-wow-delay="0.1s">--}}
+{{--                <div class="project-item h-100 wow fadeInUp" data-wow-delay="0.1s">--}}
+{{--                    <div class="project-img">--}}
+{{--                        <img src="img/projects-1.jpg" class="img-project w-100 rounded" alt="Image">--}}
+{{--                    </div>--}}
+{{--                    <div class="project-content project-animation rounded p-4">--}}
+{{--                        <div class="project-content-inner">--}}
+{{--                            <div class="project-icon mb-3"><i class="fas fa-chart-line fa-4x text-primary"></i></div>--}}
+{{--                            <p class="text-dark fs-5 mb-3">Business Growth</p>--}}
+{{--                            <a href="#" class="h4">Business Strategy And Investment Planning Growth Consulting</a>--}}
+{{--                            <div class="pt-4">--}}
+{{--                                <a class="btn btn-light rounded-pill py-3 px-5" href="#">Read More</a>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="project-item h-100 wow fadeInUp" data-wow-delay="0.3s">--}}
+{{--                    <div class="project-img">--}}
+{{--                        <img src="img/projects-1.jpg" class="img-project w-100 rounded" alt="Image">--}}
+{{--                    </div>--}}
+{{--                    <div class="project-content project-animation rounded p-4">--}}
+{{--                        <div class="project-content-inner">--}}
+{{--                            <div class="project-icon mb-3"><i class="fas fa-signal fa-4x text-primary"></i></div>--}}
+{{--                            <p class="text-dark fs-5 mb-3">Marketing Strategy</p>--}}
+{{--                            <a href="#" class="h4">Product Sailing Marketing Strategy For Improve Business</a>--}}
+{{--                            <div class="pt-4">--}}
+{{--                                <a class="btn btn-light rounded-pill py-3 px-5" href="#">Read More</a>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="project-item h-100">--}}
+{{--                    <div class="project-img">--}}
+{{--                        <img src="img/projects-1.jpg" class="img-project w-100 rounded" alt="Image">--}}
+{{--                    </div>--}}
+{{--                    <div class="project-content project-animation rounded p-4">--}}
+{{--                        <div class="project-content-inner">--}}
+{{--                            <div class="project-icon mb-3"><i class="fas fa-signal fa-4x text-primary"></i></div>--}}
+{{--                            <p class="text-dark fs-5 mb-3">Marketing Strategy</p>--}}
+{{--                            <a href="#" class="h4">Product Sailing Marketing Strategy For Improve Business</a>--}}
+{{--                            <div class="pt-4">--}}
+{{--                                <a class="btn btn-light rounded-pill py-3 px-5" href="#">Read More</a>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+    <!-- Project End -->
+
+    <div class="image-gallery">
+        <div class="image-gallery-item" onclick="showFullscreen(this)">
+            <img src="img/main-page/baget01.jpg" alt="Багетная мастерская">
+            <div class="image-caption">Багетная мастерская</div>
+        </div>
+        <div class="image-gallery-item" onclick="showFullscreen(this)">
+            <img src="img/main-page/gallery01.jpg" alt="Галерея">
+            <div class="image-caption">Художественная галерея</div>
+        </div>
+        <div class="image-gallery-item" onclick="showFullscreen(this)">
+            <img src="img/main-page/print01.jpg" alt="Печать">
+            <div class="image-caption">Услуги печати</div>
+        </div>
+        <div class="image-gallery-item" onclick="showFullscreen(this)">
+            <img src="img/main-page/market01.jpg" alt="Магазин">
+            <div class="image-caption">Магазин материалов</div>
+        </div>
+        <div class="image-gallery-item" onclick="showFullscreen(this)">
+            <img src="img/main-page/baget01.jpg" alt="Багетная мастерская">
+            <div class="image-caption">Багетная мастерская</div>
+        </div>
+        <div class="image-gallery-item" onclick="showFullscreen(this)">
+            <img src="img/main-page/gallery01.jpg" alt="Галерея">
+            <div class="image-caption">Художественная галерея</div>
+        </div>
+        <div class="image-gallery-item" onclick="showFullscreen(this)">
+            <img src="img/main-page/print01.jpg" alt="Печать">
+            <div class="image-caption">Услуги печати</div>
+        </div>
+        <div class="image-gallery-item" onclick="showFullscreen(this)">
+            <img src="img/main-page/market01.jpg" alt="Магазин">
+            <div class="image-caption">Магазин материалов</div>
+        </div>
+        <div class="image-gallery-item" onclick="showFullscreen(this)">
+            <img src="img/main-page/baget01.jpg" alt="Багетная мастерская">
+            <div class="image-caption">Багетная мастерская</div>
+        </div>
+        <div class="image-gallery-item" onclick="showFullscreen(this)">
+            <img src="img/main-page/gallery01.jpg" alt="Галерея">
+            <div class="image-caption">Художественная галерея</div>
+        </div>
+        <div class="image-gallery-item" onclick="showFullscreen(this)">
+            <img src="img/main-page/print01.jpg" alt="Печать">
+            <div class="image-caption">Услуги печати</div>
+        </div>
+        <div class="image-gallery-item" onclick="showFullscreen(this)">
+            <img src="img/main-page/market01.jpg" alt="Магазин">
+            <div class="image-caption">Магазин материалов</div>
+        </div>
+    </div>
+    <div class="fullscreen-image" onclick="hideFullscreen()">
+        <img src="" alt="Fullscreen Image" id="fullscreen-img">
+    </div>
+
+    <script>
+        function showFullscreen(element) {
+            const img = element.querySelector('img');
+            const fullscreen = document.querySelector('.fullscreen-image');
+            const fullscreenImg = document.getElementById('fullscreen-img');
+            fullscreenImg.src = img.src;
+            fullscreen.classList.add('active');
+        }
+
+        function hideFullscreen() {
+            document.querySelector('.fullscreen-image').classList.remove('active');
+        }
+    </script>
+
+    <!-- FAQ Start -->
+    @include('layouts.faq')
+    <!-- FAQ End -->
+@endsection
