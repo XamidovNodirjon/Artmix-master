@@ -194,7 +194,6 @@
             </div>
         </div>
 
-        <!-- Artists Section -->
         <div class="container">
             <h6 class="mb-4 text-primary fs-3 fw-bold text-center">ARTMIX GALLERY — Работы известных художников в нашей
                 галерее</h6>

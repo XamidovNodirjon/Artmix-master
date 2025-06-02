@@ -5,7 +5,7 @@
             <nav aria-label="breadcrumb" class="mb-5">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ route('home') }}">Главная страница</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('gallery') }}">Наша галерея</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('market') }}">Наша маркет</a></li>
                     <li class="breadcrumb-item active">Мольберты</li>
                 </ol>
             </nav>
@@ -15,9 +15,8 @@
             <div class="row">
                 @foreach($easel as $item)
                     @php
-                        // Ensure $item->images is an array
                         $images = is_array($item->images) ? $item->images : json_decode($item->images, true);
-                        $images = $images ?? []; // Fallback to empty array if null
+                        $images = $images ?? [];
                     @endphp
 
                     <div class="col-md-6 col-lg-4 mb-4">
@@ -40,7 +39,15 @@
                             <div class="gallery-info p-3 text-right">
                                 <h3 class="h5 mb-2">{{ $item->name }}</h3>
                                 <div class="mb-2">{{ $item->size }}</div>
-                                <span class="badge bg-light text-dark border">{{ $item->material }}</span>
+                                @php
+                                    $translations = [
+                                        'wood' => 'Дерево',
+                                        'iron' => 'Железо',
+                                        'aluminum' => 'Алюминий',
+                                    ];
+                                    $materialRu = $translations[$item->material] ?? $item->material;
+                                @endphp
+                                <span class="badge bg-light text-dark border">{{ $materialRu }}</span>
                             </div>
                         </div>
                     </div>
