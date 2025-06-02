@@ -75,7 +75,7 @@
             </div>
             <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
                 <div class="faq-img RotateMoveRight rounded responsive-image-container">
-                    <img src="img/faq-image.jpg" class="faq-image rounded w-100" alt="FAQ Изображение">
+                    <img src="img/faq-image.jpg" class="faq-image rounded w-100" style="width: auto; height: auto" alt="FAQ Изображение">
                 </div>
             </div>
         </div>

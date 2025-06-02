@@ -165,7 +165,6 @@
                 hint.style.display = 'block';
                 hintShownOnce = true;
 
-                // 3 soniyadan so‘ng g‘oyib bo‘ladi
                 setTimeout(() => {
                     hint.style.display = 'none';
                 }, 3000);

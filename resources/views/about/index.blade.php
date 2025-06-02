@@ -40,31 +40,37 @@
 
     <div class="container py-5">
         <div class="row g-5 align-items-start">
+            <!-- Image block -->
             <div class="col-lg-6">
-                <div class="position-relative overflow-hidden rounded shadow" style="aspect-ratio: 4 / 3;">
+                <div class="position-relative overflow-hidden rounded shadow" style="aspect-ratio: 3 / 2;">
                     <img src="{{ asset('img/baget/main-baget.jpg') }}"
                          alt="Багетная мастерская"
-                         class="w-100 h-100 object-fit-cover">
-                    <div class="position-absolute bottom-0 start-0 bg-primary text-white p-3 m-3 rounded" style="max-width: 70%;">
+                         class="w-100 h-100">
+                    <div class="position-absolute bottom-0 start-0 bg-primary text-white p-3 m-3 rounded"
+                         style="max-width: 70%;">
                         <h5 class="mb-0">Опыт более 15 лет</h5>
                     </div>
                 </div>
             </div>
 
-
+            <!-- Text content block -->
             <div class="col-lg-6">
                 <h6 class="mb-4 text-primary fs-3 fw-bold">ARTMIX MASTER — Искусство в каждой детали</h6>
                 <p class="mb-4 lead">
-                    Наша багетная мастерская создает неповторимые решения для оформления ваших ценностей уже более 15 лет.
+                    Наша багетная мастерская создает неповторимые решения для оформления ваших ценностей уже более 15
+                    лет.
                 </p>
+
                 <div class="d-flex mb-4">
                     <div class="flex-shrink-0 text-primary me-3">
                         <i class="fas fa-check-circle fa-2x"></i>
                     </div>
                     <div>
-                        <p>Мы предлагаем более 1000 видов багетов из дерева, пластика и алюминия от ведущих европейских производителей.</p>
+                        <p>Мы предлагаем более 1000 видов багетов из дерева, пластика и алюминия от ведущих европейских
+                            производителей.</p>
                     </div>
                 </div>
+
                 <div class="d-flex mb-4">
                     <div class="flex-shrink-0 text-primary me-3">
                         <i class="fas fa-check-circle fa-2x"></i>
@@ -73,6 +79,7 @@
                         <p>Используем музейные технологии оформления с защитой от ультрафиолета и пыли.</p>
                     </div>
                 </div>
+
                 <div class="d-flex mb-4">
                     <div class="flex-shrink-0 text-primary me-3">
                         <i class="fas fa-check-circle fa-2x"></i>
@@ -81,10 +88,13 @@
                         <p>Индивидуальный подход к каждому клиенту и бесплатные консультации по оформлению.</p>
                     </div>
                 </div>
-                <a href="{{route('contact')}}" class="btn btn-success px-4 py-2 rounded-pill">Заказать консультацию</a>
+
+                <a href="{{ route('contact') }}" class="btn btn-success px-4 py-2 rounded-pill">Заказать
+                    консультацию</a>
             </div>
         </div>
     </div>
+
 
     <!-- Галерея багетов -->
     <div class="container-fluid bg-light py-5">
@@ -295,45 +305,45 @@
         </div>
     </div>
 
-    <!-- Наши преимущества -->
     <div class="container py-5">
         <div class="row g-5">
             <div class="col-lg-6">
-                <h2 class="text-primary display-5 fw-bold mb-4">Почему выбирают нашу мастерскую</h2>
+                <h2 class="display-5 fw-bold mb-4 custom-text">Почему выбирают нашу мастерскую</h2>
 
                 <div class="d-flex mb-4">
-                    <div class="flex-shrink-0 bg-primary text-white rounded-circle p-3 me-4">
+                    <div class="flex-shrink-0 custom-bg custom-text icon-circle me-4">
                         <i class="fas fa-award fa-2x"></i>
                     </div>
                     <div>
-                        <h5 class="mb-2">Профессионализм</h5>
-                        <p class="mb-0">Наши мастера с опытом работы от 10 лет используют только профессиональное
+                        <h5 class="mb-2 custom-text">Профессионализм</h5>
+                        <p class="mb-0 custom-text">Наши мастера с опытом работы от 10 лет используют только
+                            профессиональное
                             оборудование и материалы.</p>
                     </div>
                 </div>
 
                 <div class="d-flex mb-4">
-                    <div class="flex-shrink-0 bg-primary text-white rounded-circle p-3 me-4">
+                    <div class="flex-shrink-0 custom-bg custom-text icon-circle me-4">
                         <i class="fas fa-clock fa-2x"></i>
                     </div>
                     <div>
-                        <h5 class="mb-2">Скорость выполнения</h5>
-                        <p class="mb-0">Скорость выполнение минимум за 1 час смотря от сложности заказа.</p>
+                        <h5 class="mb-2 custom-text">Скорость выполнения</h5>
+                        <p class="mb-0 custom-text">Скорость выполнение минимум за 1 час смотря от сложности заказа.</p>
                     </div>
                 </div>
 
                 <div class="d-flex mb-4">
-                    <div class="flex-shrink-0 bg-primary text-white rounded-circle p-3 me-4">
+                    <div class="flex-shrink-0 custom-bg custom-text icon-circle me-4">
                         <i class="fas fa-shield-alt fa-2x"></i>
                     </div>
                     <div>
-                        <h5 class="mb-2">Гарантия качества</h5>
-                        <p class="mb-0">5 лет гарантии на все наши работы и материалы.</p>
+                        <h5 class="mb-2 custom-text">Гарантия качества</h5>
+                        <p class="mb-0 custom-text">5 лет гарантии на все наши работы и материалы.</p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-6">
-                <div class="bg-primary p-4 rounded text-red">
+                <div class="custom-bg p-4 rounded custom-text">
                     <h3 class="mb-4">Индивидуальный подход</h3>
                     <p class="mb-4">Мы предлагаем бесплатные консультации по подбору багета и паспарту, учитывая:</p>
                     <ul class="list-unstyled mb-4">
@@ -342,12 +352,14 @@
                         <li class="mb-2"><i class="fas fa-check-circle me-2"></i> Особенности интерьера</li>
                         <li class="mb-2"><i class="fas fa-check-circle me-2"></i> Ваши личные предпочтения</li>
                     </ul>
-                    <a href="{{route('contact')}}" class="btn btn-success px-4 py-2 rounded-pill">Записаться на
+                    <a href="{{ route('contact') }}" class="btn btn-success px-4 py-2 rounded-pill">Записаться на
                         консультацию</a>
                 </div>
             </div>
         </div>
     </div>
+
+
 
     <!-- Отзывы -->
     <div class="container-fluid bg-light py-5">
@@ -426,4 +438,33 @@
             </div>
         </div>
     </div>
+
+    <style>
+        .icon-circle {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .custom-text {
+            color: #663300 !important;
+        }
+
+        .position-relative {
+            width: auto;
+            height: auto;
+        }
+
+        @media (min-width: 992px) {
+            .col-lg-6:first-child {
+                width: 50%;
+                flex: 0 0 auto;
+            }
+        }
+    </style>
+
+
 @endsection

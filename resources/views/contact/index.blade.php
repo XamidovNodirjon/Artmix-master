@@ -75,7 +75,7 @@
                         <div class="row g-3">
                             <div class="col-lg-12 col-xl-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                    <input type="text" class="form-control" id="name" placeholder="Your Name" required>
                                     <label for="name">Your Name</label>
                                 </div>
                             </div>
@@ -87,7 +87,7 @@
                             </div>
                             <div class="col-lg-12 col-xl-6">
                                 <div class="form-floating">
-                                    <input type="number" class="form-control" id="phone" placeholder="Phone">
+                                    <input type="number" class="form-control" id="phone" placeholder="Phone" required>
                                     <label for="phone">Your Phone</label>
                                 </div>
                             </div>
@@ -161,4 +161,10 @@
             </div>
         </div>
     </div>
+
+    <style>
+        .bg-primary{
+            background-color: #663300 !important;
+        }
+    </style>
 @endsection
