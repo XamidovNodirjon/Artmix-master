@@ -42,7 +42,6 @@ Route::post('artist/store', [ArtistController::class, 'store'])->name('artist-st
 Route::get('/artist/{id}/edit', [ArtistController::class, 'edit'])->name('edit-artist');
 Route::put('/artist/update/{id}', [ArtistController::class, 'update'])->name('update-artist');
 Route::delete('/artist/{id}', [ArtistController::class, 'destroy'])->name('artist.destroy');
-//Route::get('/artist/{id}', [ArtistController::class, 'show'])->name('artist.show');
 Route::post('/artist/{id}/add-work', [ArtistController::class, 'addWork'])->name('artist.addWork');
 Route::put('/artist/work/{id}/update', [ArtistController::class, 'updateWork'])->name('artist.updateWork');
 

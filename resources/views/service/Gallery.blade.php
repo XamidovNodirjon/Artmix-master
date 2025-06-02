@@ -209,12 +209,11 @@
     </div>
 
     <style>
-        /* Unified styling for all genre sections */
         .genre-section {
             padding: 2rem;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            /*background: white;*/
+            /*border-radius: 8px;*/
+            /*box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);*/
             margin-bottom: 3rem;
         }
 

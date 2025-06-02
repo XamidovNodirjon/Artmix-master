@@ -9,14 +9,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="" name="keywords">
     <meta content="" name="description">
-    <meta name="description"
-          content="ArtMixMaster — bosma mahsulotlar, reklama va marketing xizmatlarini taklif etuvchi kompaniya. Sifatli va tezkor xizmat!">
+    <meta name="description" content="ArtMixMaster — bosma mahsulotlar, reklama va marketing xizmatlarini taklif etuvchi kompaniya. Sifatli va tezkor xizmat!">
     <meta name="keywords" content="artmixmaster, print, bosma xizmatlar, dizayn, reklama, uz">
     <meta property="og:title" content="ArtMixMaster - Print xizmati">
     <meta property="og:description" content="Sifatli bosma xizmatlar, reklama, dizayn. ArtMixMaster.uz">
     <meta property="og:image" content="https://artmixmaster.uz/logo.png">
     <meta property="og:url" content="https://artmixmaster.uz/">
-    <meta name="google-site-verification" content="1Td-Xo4fBokl2JWwcZpIHixY8Hhuyq5XIMi2EzaS4_c"/>
+    <meta name="google-site-verification" content="1Td-Xo4fBokl2JWwcZpIHixY8Hhuyq5XIMi2EzaS4_c" />
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,14 +28,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="{{asset('lib/animate/animate.min.css')}}" rel="stylesheet">
-    <link href="{{asset('lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
-    <link href="{{asset('lib/lightbox/css/lightbox.min.css')}}" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
-    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <link href="{{asset('css/style.css')}}" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     @stack('styles')
 </head>
 <body>
@@ -184,17 +182,16 @@
 </script>
 
 @stack('scripts')
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 
-<script src="{{asset('lib/wow/wow.min.js')}}"></script>
-<script src="{{asset('lib/easing/easing.min.js')}}"></script>
-<script src="{{asset('lib/waypoints/waypoints.min.js')}}"></script>
-<script src="{{asset('lib/counterup/counterup.min.js')}}"></script>
-<script src="{{asset('lib/owlcarousel/owl.carousel.min.js')}}"></script>
-<script src="{{asset('lib/lightbox/js/lightbox.min.js')}}"></script>
+<script src="lib/wow/wow.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/waypoints/waypoints.min.js"></script>
+<script src="lib/counterup/counterup.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="lib/lightbox/js/lightbox.min.js"></script>
 
-<script src="{{asset('js/main.js')}}"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
