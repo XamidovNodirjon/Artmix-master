@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h2 class="mb-4">Мольбертни таҳрирлаш</h2>
+        <h2 class="mb-4">Редактировать мольберт</h2>
 
         <form action="{{ route('update-easel', $easel->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
@@ -40,9 +40,9 @@
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Загрузить новые фото</label>
-                <input class="form-control" name="images[]" type="file" multiple>
-                <small class="text-muted">Можно загрузить несколько фото (jpg, jpeg, png, webp)</small>
+                <label for="images" class="form-label">Фото</label>
+                <input class="form-control" id="images" name="images[]" type="file" multiple required>
+                <div id="file-error" style="color: red; margin-top: 6px;"></div>
             </div>
 
             <div class="mb-3">
@@ -73,5 +73,20 @@
             });
         </script>
     @endpush
-
+    <script>
+        document.getElementById('images').addEventListener('change', function (event) {
+            const maxSize = 2 * 1024 * 1024; // 2 MB
+            const files = event.target.files;
+            let errorMsg = "";
+            for (let i = 0; i < files.length; i++) {
+                if (files[i].size > maxSize) {
+                    errorMsg += `"${files[i].name}" размер больше 2 МБ!<br>`;
+                }
+            }
+            document.getElementById('file-error').innerHTML = errorMsg;
+            if (errorMsg !== "") {
+                event.target.value = "";
+            }
+        });
+    </script>
 @endsection

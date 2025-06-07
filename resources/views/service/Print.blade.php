@@ -15,10 +15,10 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
                         <a href="{{route('home')}}" class="nav-item nav-link">Главная страница</a>
-                        <a href="{{route('print')}}" class="nav-item nav-link active">Принт</a>
                         <a href="{{route('gallery')}}" class="nav-item nav-link">Галерея</a>
                         <a href="{{route('about')}}" class="nav-item nav-link">Багет</a>
                         <a href="{{route('market')}}" class="nav-item nav-link">Маркет</a>
+                        <a href="{{route('print')}}" class="nav-item nav-link active">Принт</a>
                         <a href="{{route('contact')}}" class="nav-item nav-link">Контакт</a>
                     </div>
                 </div>
@@ -42,13 +42,13 @@
                 <div class="col-6">
                     <div class="gallery-item" onclick="showFullscreen(this)">
                         <img src="img/services/print01.png" alt="Багетная мастерская 1">
-                        <div class="caption">Широкоформатная универсальная УФ-печать</div>
+                        <div class="caption1">Широкоформатная универсальная УФ-печать</div>
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="gallery-item" onclick="showFullscreen(this)">
                         <img src="img/services/print02.png" alt="Багетная мастерская 2">
-                        <div class="caption">Широкоформатная рулонная печать</div>
+                        <div class="caption1">Широкоформатная рулонная печать</div>
                     </div>
                 </div>
             </div>
@@ -158,4 +158,22 @@
             });
         });
     </script>
+
+    <style>
+        .caption1 {
+            position: absolute;
+            bottom: 40px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            border-radius: 10px;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            padding: 2px;
+            background: rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+    </style>
 @endsection

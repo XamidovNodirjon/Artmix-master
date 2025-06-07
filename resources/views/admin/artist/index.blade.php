@@ -4,7 +4,7 @@
     <div class="row mb-3">
         <div class="button-list">
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signup-modal">
-                Добавить артист
+                Добавить артиста
             </button>
         </div>
     </div>
@@ -13,11 +13,11 @@
         <table class="table mb-0 table-bordered">
             <thead>
             <tr>
-                <th>#</th>
-                <th>Ismi</th>
-                <th>Izoh</th>
-                <th>Asarlar (Rasmlar)</th>
-                <th>Amallar</th>
+                <th>№</th>
+                <th>Имя</th>
+                <th>Описание</th>
+                <th>Работы (Изображения)</th>
+                <th>Действия</th>
             </tr>
             </thead>
             <tbody>
@@ -41,10 +41,10 @@
                             <a href="{{ asset('storage/' . $firstImage) }}" target="_blank">
                                 <img src="{{ asset('storage/' . $firstImage) }}"
                                      class="work-thumbnail"
-                                     alt="Work image">
+                                     alt="Изображение работы">
                             </a>
                         @else
-                            <span class="text-muted">Rasmlar yo‘q</span>
+                            <span class="text-muted">Изображения отсутствуют</span>
                         @endif
                     </td>
                     <td>
@@ -53,7 +53,7 @@
                         </a>
 
                         <form action="{{ route('artist.destroy', $artist->id) }}" method="POST" class="d-inline-block"
-                              onsubmit="return confirm('Haqiqatan ham o‘chirmoqchimisiz?')">
+                              onsubmit="return confirm('Вы уверены, что хотите удалить?')">
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-sm btn-danger" type="submit">
@@ -76,34 +76,35 @@
                                   enctype="multipart/form-data">
                                 @csrf
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="addImageModalLabel">Yangi rasm qo‘shish
+                                    <h5 class="modal-title" id="addImageModalLabel">Добавить изображение
                                         ({{ $artist->name }})</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Yopish"></button>
+                                            aria-label="Закрыть"></button>
                                 </div>
                                 <div class="modal-body">
                                     <div class="mb-3">
-                                        <label for="image" class="form-label">Rasm</label>
-                                        <input type="file" name="image" class="form-control" required accept="image/*">
+                                        <label for="image" class="form-label">Изображение</label>
+                                        <input type="file" name="image" id="images" class="form-control" required accept="image/*">
+                                        <div id="file-error" style="color: red; margin-top: 6px;"></div>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="image_name" class="form-label">rasim nomi</label>
-                                        <input type="text" name="image_name" class="form-control" placeholder="nimadir"
+                                        <label for="image_name" class="form-label">Название изображения</label>
+                                        <input type="text" name="image_name" class="form-control" placeholder="что-то"
                                                required>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="size" class="form-label">O‘lchami</label>
+                                        <label for="size" class="form-label">Размер</label>
                                         <input type="text" name="size" class="form-control" placeholder="90x120"
                                                required>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="materials" class="form-label">Materiallari</label>
+                                        <label for="materials" class="form-label">Материалы</label>
                                         <input type="text" name="materials" class="form-control"
-                                               placeholder="Akvarrel, qog‘oz" required>
+                                               placeholder="Акварель, бумага" required>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="submit" class="btn btn-success">Qo‘shish</button>
+                                    <button type="submit" class="btn btn-success">Добавить</button>
                                 </div>
                             </form>
                         </div>
@@ -112,7 +113,7 @@
 
             @empty
                 <tr>
-                    <td colspan="5" class="text-center text-muted">Ma'lumotlar mavjud emas</td>
+                    <td colspan="5" class="text-center text-muted">Данные отсутствуют</td>
                 </tr>
             @endforelse
             </tbody>
@@ -126,39 +127,41 @@
                     <form class="px-3" action="{{ route('artist-store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3">
-                            <label for="name" class="form-label">Ismi</label>
-                            <input name="name" class="form-control" type="text" required placeholder="Artist ismi">
+                            <label for="name" class="form-label">Имя</label>
+                            <input name="name" class="form-control" type="text" required placeholder="Имя артиста">
                         </div>
 
                         <div class="mb-3">
-                            <label for="description" class="form-label">Tavsif</label>
+                            <label for="description" class="form-label">Описание</label>
                             <textarea name="description" class="form-control" rows="3"
-                                      placeholder="Artist haqida qisqacha tavsif..."></textarea>
+                                      placeholder="Краткое описание об артисте..."></textarea>
                         </div>
 
                         <div class="mb-3">
-                            <label for="images" class="form-label">Asar fotosuratlari</label>
-                            <input type="file" name="image" class="form-control" required>
+                            <label for="images" class="form-label">Фотографии работ</label>
+                            <input type="file" name="images" id="images" class="form-control" multiple required>
+                            <div id="file-error" style="color: red; margin-top: 6px;"></div>
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label for="size" class="form-label">Название изображения</label>
+                            <input name="image_name" class="form-control" type="text" required placeholder="что-то">
                         </div>
 
                         <div class="mb-3">
-                            <label for="size" class="form-label">Rasim nomi</label>
-                            <input name="image_name" class="form-control" type="text" required placeholder="nimaidr">
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="size" class="form-label">Rasim size</label>
+                            <label for="size" class="form-label">Размер изображения</label>
                             <input name="size" class="form-control" type="text" required placeholder="90x120">
                         </div>
 
                         <div class="mb-3">
-                            <label for="materials" class="form-label">Rasim materials</label>
+                            <label for="materials" class="form-label">Материалы изображения</label>
                             <input name="materials" class="form-control" type="text" required
-                                   placeholder="Akvarrel, qog‘oz">
+                                   placeholder="Акварель, бумага">
                         </div>
 
                         <div class="mb-3 text-center">
-                            <button class="btn btn-primary" type="submit">Qo‘shish</button>
+                            <button class="btn btn-primary" type="submit">Добавить</button>
                         </div>
                     </form>
                 </div>
@@ -175,6 +178,20 @@
             border: 1px solid #ccc;
         }
     </style>
-
-
+    <script>
+        document.getElementById('images').addEventListener('change', function (event) {
+            const maxSize = 2 * 1024 * 1024; // 2 MB
+            const files = event.target.files;
+            let errorMsg = "";
+            for (let i = 0; i < files.length; i++) {
+                if (files[i].size > maxSize) {
+                    errorMsg += `"${files[i].name}" размер больше 2 МБ!<br>`;
+                }
+            }
+            document.getElementById('file-error').innerHTML = errorMsg;
+            if (errorMsg !== "") {
+                event.target.value = "";
+            }
+        });
+    </script>
 @endsection

@@ -25,12 +25,14 @@ Route::get('gallery-historical-genre', [GalleryController::class, 'historyGenre'
 Route::get('gallery-portrait-genre', [GalleryController::class, 'portraitGenre'])->name('portraitGenre');
 Route::get('gallery-peyzaj-genre', [GalleryController::class, 'landscapeGenre'])->name('landscapeGenre');
 Route::get('gallery-naturmort-genre', [GalleryController::class, 'naturmortGenre'])->name('naturmortGenre');
-Route::get('gallery-abstraction-genre', [GalleryController::class, 'abstractsiyaGenre'])->name('abstractionGenre');
+Route::get('gallery-abstraction-genre', [GalleryController::class, 'abstractionGenre'])->name('abstractionGenre');
 Route::get('gallery-animalistic-genre', [GalleryController::class, 'animalisticGenre'])->name('animalisticGenre');
 Route::get('gallery-architectural-genre', [GalleryController::class, 'architecturalGenre'])->name('architecturalGenre');
 Route::get('gallery-graphics-genre', [GalleryController::class, 'graphicsGenre'])->name('graphicsGenre');
 
 Route::post('login', [AuthController::class, 'login'])->name('login');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
 Route::get('dashboard', [AdminController::class, 'index'])->name('dashboard');
 Route::post('easel-store', [EaselController::class, 'store'])->name('easelCreate');
 Route::get('easel', [EaselController::class, 'index'])->name('easel');

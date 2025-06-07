@@ -2411,6 +2411,7 @@ hr {
     transition: all 0.3s ease;
 }
 
+
 .fullscreen-carousel .swiper-slide:hover .caption {
     background: rgba(0, 0, 0, 0.6);
 }

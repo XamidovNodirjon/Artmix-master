@@ -13,10 +13,10 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
                     <a href="{{route('home')}}" class="nav-item nav-link active">Главная страница</a>
-                    <a href="{{route('print')}}" class="nav-item nav-link">Принт</a>
                     <a href="{{route('gallery')}}" class="nav-item nav-link">Галерея</a>
                     <a href="{{route('about')}}" class="nav-item nav-link">Багет</a>
                     <a href="{{route('market')}}" class="nav-item nav-link">Маркет</a>
+                    <a href="{{route('print')}}" class="nav-item nav-link">Принт</a>
                     <a href="{{route('contact')}}" class="nav-item nav-link">Контакт</a>
                     <a href="#" class="nav-item nav-link" data-bs-toggle="modal" data-bs-target="#loginModal">
                         <i class="fe-user" style="color: whitesmoke"></i> Войти

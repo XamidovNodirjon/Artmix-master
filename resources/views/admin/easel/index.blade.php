@@ -11,12 +11,12 @@
         <table class="table mb-0">
             <thead>
             <tr>
-                <th>#</th>
-                <th>Nomi</th>
-                <th>O‘lchami</th>
-                <th>Materiali</th>
-                <th>Rasm</th>
-                <th>Amallar</th>
+                <th>№</th>
+                <th>Название</th>
+                <th>Размер</th>
+                <th>Материал</th>
+                <th>Изображение</th>
+                <th>Действия</th>
             </tr>
             </thead>
             <tbody>
@@ -37,11 +37,13 @@
                             }
                         @endphp
                         @if(count($images))
-                            <div id="carousel-{{ $easel->id }}" class="carousel slide" data-bs-ride="carousel" style="width: 120px;">
+                            <div id="carousel-{{ $easel->id }}" class="carousel slide" data-bs-ride="carousel"
+                                 style="width: 120px;">
                                 <div class="carousel-inner">
                                     @foreach($images as $imgIndex => $image)
                                         <div class="carousel-item {{ $imgIndex === 0 ? 'active' : '' }}">
-                                            <img src="{{ asset('storage/' . $image) }}" class="d-block easel-carousel-img" alt="easel image">
+                                            <img src="{{ asset('storage/' . $image) }}"
+                                                 class="d-block easel-carousel-img" alt="easel image">
                                         </div>
                                     @endforeach
                                 </div>
@@ -57,14 +59,15 @@
                                 @endif
                             </div>
                         @else
-                            <span class="text-muted">Rasm yo‘q</span>
+                            <span class="text-muted">Нет изображения</span>
                         @endif
                     </td>
                     <td>
                         <a href="{{ route('easelEdit', $easel->id) }}" class="btn btn-sm btn-primary">
                             <i class="fa fa-edit"></i>
                         </a>
-                        <form action="{{ route('easel.destroy', $easel->id) }}" method="POST" style="display:inline-block;"
+                        <form action="{{ route('easel.destroy', $easel->id) }}" method="POST"
+                              style="display:inline-block;"
                               onsubmit="return confirm('Haqiqatan ham o‘chirmoqchimisiz?')">
                             @csrf
                             @method('DELETE')
@@ -77,7 +80,7 @@
             @endforeach
             @if($easels->isEmpty())
                 <tr>
-                    <td colspan="6" class="text-center text-muted">Ma'lumotlar mavjud emas</td>
+                    <td colspan="6" class="text-center text-muted">Данные отсутствуют.</td>
                 </tr>
             @endif
             </tbody>
@@ -105,9 +108,9 @@
 
                         <div class="mb-3">
                             <label for="images" class="form-label">Фото</label>
-                            <input class="form-control" name="images[]" type="file" multiple required>
+                            <input class="form-control" id="images" name="images[]" type="file" multiple required>
+                            <div id="file-error" style="color: red; margin-top: 6px;"></div>
                         </div>
-
                         <div class="mb-3">
                             <label for="password" class="form-label">Тип</label>
                             <select name="material" class="form-select" required>
@@ -132,11 +135,29 @@
             width: 100%;
             object-fit: cover;
         }
+
         .carousel {
             max-width: 100px;
         }
+
         .carousel-inner {
             width: 100%;
         }
     </style>
+    <script>
+        document.getElementById('images').addEventListener('change', function (event) {
+            const maxSize = 2 * 1024 * 1024; // 2 MB
+            const files = event.target.files;
+            let errorMsg = "";
+            for (let i = 0; i < files.length; i++) {
+                if (files[i].size > maxSize) {
+                    errorMsg += `"${files[i].name}" размер больше 2 МБ!<br>`;
+                }
+            }
+            document.getElementById('file-error').innerHTML = errorMsg;
+            if (errorMsg !== "") {
+                event.target.value = ""; // fayl tanlovini tozalash
+            }
+        });
+    </script>
 @endsection
